@@ -1,0 +1,116 @@
+<%- layout('layout/boilerplate') %>
+
+    <a class="btn btn-outline-dark mt-1 ms-2" href="/ess">
+        < Back</a>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-6 offset-3">
+                        <h3 class="text-center mb-3">YOUR ORDER</h3>
+
+                        <div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Product</th>
+                                        <td><%= order.name %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Amount</th>
+                                        <td>GH₵<%= order.price %>.00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <h4 class="text-center mt-3 mb-3">BILLING DETAILS</h4>
+                        <form method="post" action="/ess/<%= order._id %>/purchase" class="needs-validation" novalidate>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="First-name">First name <span style="color: red">*</span></label>
+                                <input class="form-control" type="text" id="First-name" name="Firstname" required>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="Last-name">Last name <span style="color: red">*</span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="Last-name" class="form-control" name="Lastname" required>
+                                </div>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 mt-3">
+                                <label class="input-group-text" for="region">Region <span style="visibility: hidden">*</span> <span style="color: red">*</span></label>
+                                <select class="form-select" name="Region" id="region" required>
+                                    <option value="select">Choose a region...</option>
+                                    <option value="Ashanti">Ashanti</option>
+                                    <option value="Brong-Ahafo">Brong Ahafo</option>
+                                    <option value="Central">Central</option>
+                                    <option value="Eastern">Eastern</option>
+                                    <option value="Greater-Accra">Greater Accra</option>
+                                    <option value="Northern">Northern</option>
+                                    <option value="Upper-East">Upper East</option>
+                                    <option value="Upper-West">Upper-West</option>
+                                    <option value="Volta">Volta</option>
+                                    <option value="Western">Western</option>
+                                    <option value="Savannah">Savannah</option>
+                                    <option value="Bono-East">Bono East</option>
+                                    <option value="Oti">Oti</option>
+                                    <option value="Ahafo">Ahafo</option>
+                                    <option value="Western-North">Western North</option>
+                                    <option value="North-East">North East</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="Town-City">Town/City <span style="color: red">*</span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="Town-City" class="form-control"
+                                        aria-label="Amount (to the nearest cedi)" name="TownCity" required>
+                                </div>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <div class="mb-3"><label class="form-label" for="Phone">Phone <span style="color: red">*</span></label>
+                                <input class="form-control" type="text" id="Phone" name="Phone" required>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <div class="mb-3"><label class="form-label" for="Email address">Email address <span style="color: red">*</span></label>
+                                <input class="form-control" type="email" id="Email address" name="Email" required>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="add-notes">Additional notes</label>
+                                <textarea class="form-control" placeholder="notes to vendor..." id="add-notes" name="AddNotes"></textarea>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                            </div>
+
+                            <button class=" mb-3 mt-2 btn btn-info">Buy</button>
+                            <a href="https://wa.me/233547206496"><img class="img-fluid" src="../../whatsapp.png" alt="" style="height: 42px">
+                            </a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>

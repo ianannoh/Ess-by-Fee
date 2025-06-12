@@ -1,0 +1,17 @@
+.admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.table-responsive {
+
+}
+
+.table {
+    border-right: solid 2px #E1E5E8FF;
+}
+
+#addbtn {
+    margin-left: 7%;
+}

@@ -1,0 +1,9 @@
+h3 {
+    font-weight: bold;
+}
+
+.img-fluid {
+    height: 400px; 
+    width: 500px;
+    border-radius: 1rem;
+}

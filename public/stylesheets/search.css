@@ -1,0 +1,26 @@
+.card {
+    border: 0px;
+    border-radius: 5px;
+}
+
+.list-group-item {
+    color: rgb(107, 142, 35);
+}
+
+.card-title {
+    color: rgb(107, 142, 35);
+}
+
+div a {
+    text-decoration: none;
+    color: rgb(255, 193, 7);
+    font-family: monospace;
+}
+
+div a :hover {
+    color: #5fb9b9;
+}
+
+#search {
+    margin-bottom: 8rem;
+}

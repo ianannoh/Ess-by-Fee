@@ -1,0 +1,66 @@
+<% layout('layout/boilerplate.ejs') %>
+    <a class="btn btn-dark mt-1 me-1" href="/ess/<%=essOne._id%>">
+        < Back</a>
+
+
+             <div class="container">
+
+                <div class="row">
+                    <div class="col-6 offset-3">
+                        <h1 class="text-center mb-3">EDIT</h1>
+                        <form method="post" action="/ess" class="needs-validation" novalidate>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Name</label>
+                                <input class="form-control" type="text" id="name" name="name" required value="<%=essOne.name%>">
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please add a name of item.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="price">Price</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">GH₵</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest cedi)" name="price" required value="<%=essOne.price%>">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please add a price of item.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <textarea class="form-control" type="text" id="description" name="description"
+                                    required><%=essOne.description%>"</textarea>
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please add a description.
+                                </div>
+                            </div>
+
+                            <div class="mb-3"><label class="form-label" for="image">Image</label>
+                                <input class="form-control" type="text" id="image" name="Image" required value="<%=essOne.Image%>">
+                                <div class="valid-feedback">
+                                    👍
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please add an image.
+                                </div>
+                            </div>
+
+                            <button class=" mb-3 mt-2 btn btn-info">Add</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,33 @@
+<% layout('layout/boilerplate.ejs') %>
+<link rel="stylesheet" href="../../stylesheets/search.css">
+
+    <a href="/ess" class="btn ms-2 btn-outline-dark">Back</a>
+    <div class="container mb-5" >
+        
+        <div class="row" id="search">
+            <% if(essProducts.length > 0) {%>
+                <h3 class="text-center">Showing results for <%=q%></h3>
+                <% for (let product of essProducts){ %>
+                <div class="card mb-1" style="width: 20rem;">
+                    <a href="/ess/<%= product._id  %>">
+                        <img src="../../prod/<%=product.Image%>.jpg" style="max-height: 200px;" class="card-img-top"
+                            alt="product image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/ess/<%= product._id  %>"><h5 class="card-title text-center"><%= product.name %></h5></a>
+                        <a href="/ess/<%= product._id  %>">
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item">GH₵<%= product.price %>.00</li>
+                            </ul>
+                        </a>
+
+                    </div>
+                </div>
+                <% } %>
+
+           <% } else { %>
+                <h4 class="text-center">No results found for "<%= q %>"</h4>
+                <img src="../../error1.jpg" alt="error image" class="img-fluid  mt-5 mx-auto d-block" style="height: 400px; width: 600px;">
+          <% }%>
+        </div>
+    </div>

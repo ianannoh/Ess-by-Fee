@@ -1,0 +1,90 @@
+<% layout('layout/boilerplate.ejs') %>
+    <link rel="stylesheet" href="../../stylesheets/show.css">
+    <link rel="stylesheet" href="/stylesheets/star.css">
+
+    <a href="/ess" class="btn btn-outline-dark ms-2">Back</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img src="../../prod/<%=essOne.Image%>.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-6">
+                <h3 class="mt-2">
+                    <%= essOne.name %>
+                </h3>
+                <h4 class="mt-4">GH₵<%= essOne.price %>.00</h4>
+                <p class="mt-4">
+                    <%= essOne.description %>
+                </p>
+
+                <a href="/ess/<%=essOne.id%>/edit" class="btn btn-warning mt-1">Edit product</a>
+                <form action="/ess/<%=essOne._id%>?_method=DELETE" method="post">
+                    <button class="btn btn-danger mt-1">Delete</button>
+                </form>
+                <a href="/ess/<%= essOne._id %>/purchase" class="btn btn-success mt-3">Purchase</a> <br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 offset-4 mt-3">
+                <h3 class="text-center">RATINGS & REVIEWS</h3>
+
+                <% for (let r of essOne.review) {%>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    By <%= r.author %>
+                                </h5>
+                                <p class="starability-result" data-rating="<%= r.rating %>">
+                                    Rated: <%= r.rating %>
+                                </p>
+                                <p class="card-text">
+                                    <%= r.body %>
+                                </p>
+                                <form action="/ess/<%= essOne._id %>/review/<%= r._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% } %>
+
+                            <form class="mb-3 needs-validation" action="/ess/<%= essOne._id %>/review" method="post"
+                                novalidate>
+                                <div class="mt-5 col-6">
+                                    <h5> ADD YOUR REVIEW</h5>
+
+                                    <fieldset class="starability-basic">
+                                        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0"
+                                            checked aria-label="No rating." />
+                                        <input type="radio" id="first-rate1" name="rating" value="1" />
+                                        <label for="first-rate1" title="Terrible">1 star</label>
+                                        <input type="radio" id="first-rate2" name="rating" value="2" />
+                                        <label for="first-rate2" title="Not good">2 stars</label>
+                                        <input type="radio" id="first-rate3" name="rating" value="3" />
+                                        <label for="first-rate3" title="Average">3 stars</label>
+                                        <input type="radio" id="first-rate4" name="rating" value="4" />
+                                        <label for="first-rate4" title="Very good">4 stars</label>
+                                        <input type="radio" id="first-rate5" name="rating" value="5" />
+                                        <label for="first-rate5" title="Amazing">5 stars</label>
+                                    </fieldset>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input name="author" type="text" id="name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="review">Review</label>
+                                    <textarea name="body" class="form-control" id="review" cols="30" rows="4"
+                                        required></textarea>
+                                </div>
+                                <div>
+                                    <button class="btn btn-info">Add Review</button>
+                                </div>
+                            </form>
+
+
+            </div>
+        </div>
+    </div>

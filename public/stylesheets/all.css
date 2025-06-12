@@ -1,0 +1,25 @@
+.card {
+    border: 0px;
+    border-radius: 5px;
+}
+
+.list-group-item {
+    color: black;
+}
+
+.card-title {
+    color: black;
+}
+
+div a {
+    text-decoration: none;
+}
+
+div a :hover {
+    color: #5fb9b9;
+}
+
+.card img {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

@@ -1,0 +1,16 @@
+footer div {
+    border: solid 2px red;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-around;
+}
+
+.twofoot {
+    text-align: center;
+    width: 100%;
+}
+
+
+

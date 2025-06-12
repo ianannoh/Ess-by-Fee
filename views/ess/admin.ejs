@@ -1,0 +1,47 @@
+<% layout('layout/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/admin.css">
+
+<a class="btn btn-success" href="/ess/add" style="text-align: end" id="addbtn">Add a product</a>
+
+<h1 class="text-center mb-4">ORDERS</h1>
+
+<div class="container admin">
+
+    <% for(let order of orders) {%>
+    <div>
+        <div class="table-responsive mb-3">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">Name of buyer</th>
+                    <td><%= order.Firstname %> <%= order.Lastname %> </td>
+                </tr>
+                <tr>
+                    <th scope="row">Order</th>
+                    <td><%= order.productName %> (<%= order.productId %>)</td>
+                </tr>
+                <tr>
+                    <th scope="row">Amount</th>
+                    <td>GH₵<%= order.productPrice %>.00</td>
+                </tr>
+                <tr>
+                    <th scope="row">Location</th>
+                    <td><%= order.TownCity %>, <%= order.Region %></td>
+                </tr>
+                <tr>
+                    <th scope="row">Phone & Email</th>
+                    <td><%= order.Phone %>, <%= order.Email %></td>
+                </tr>
+                <tr>
+                    <th scope="row">Additional notes</th>
+                    <td><%= order.AddNotes %></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <% } %>
+</div>
+

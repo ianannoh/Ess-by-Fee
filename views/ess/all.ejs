@@ -1,0 +1,34 @@
+<% layout('layout/boilerplate.ejs') %>
+    <link rel="stylesheet" href="../../stylesheets/all.css">
+
+    <div id="all" class="container">
+        <div class="row">
+            <% for(let e of essAll){ %>
+
+                <div class="card mb-1" style="width: 20rem;">
+                    <a href="/ess/<%= e._id  %>">
+                        <img src="../../prod/<%=e.Image%>.jpg" style="max-height: 200px;" class="card-img-top"
+                            alt="product image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/ess/<%= e._id  %>">
+                            <h5 class="card-title text-center">
+                                <%= e.name %>
+                            </h5>
+                        </a>
+
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item">GH₵<%= e.price %>.00</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <% } %>
+        </div>
+    </div>
+
+    <!--
+    - Reduce text size
+    - Change hover
+    -->
