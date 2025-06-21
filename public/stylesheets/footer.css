@@ -1,15 +1,39 @@
-footer div {
-    border: solid 2px red;
+footer {
+    margin-left: 5%;
+    width: 90%;
+    border-top: 1px solid orange;
+
 }
 
 .foot {
-    display: flex;
-    justify-content: space-around;
+    border-bottom: 1px solid orange;
 }
 
-.twofoot {
+.twofoot, li {
+    font-size: 20px;
+    margin-bottom: 1%;
+}
+
+.foot div{
+    display: flex;
+    justify-content: center;
+}
+
+h4 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 2%;
     text-align: center;
-    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
 
 

@@ -1,21 +1,10 @@
 nav {
-    background-color: #ffffff;
+    border-bottom: 2px solid orange;
+    margin-bottom: 1%;
 }
 
-.nav-link {
-    font-size: 25px;
-    color: rgb(107, 142, 35);
-} 
-
-.cart {
-    height: 50px;
-    width: 80px;
-    margin-left: 10px;
+nav img {
+    height: 10%;
+    width: 10%;
 }
 
-/*
-.nav-link {
-    font-size: 25px;
-    color: rgb(107, 142, 35);
-} 
-*/
